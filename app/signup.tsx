@@ -87,8 +87,8 @@ export default function SignupPage() {
       
       Alert.alert(
         'Success',
-        'Your account has been confirmed. Please sign in to continue and set up MFA.',
-        [{ text: 'OK', onPress: () => router.replace('/login') }]
+        'Your account has been confirmed. Welcome!',
+        [{ text: 'OK', onPress: () => router.replace('/welcome') }]
       );
     } catch (error: any) {
       console.error('Confirm sign up error:', error);
@@ -147,8 +147,8 @@ export default function SignupPage() {
         await verifyTOTP(mfaCode);
         Alert.alert(
           'Success', 
-          'MFA setup complete. Please login with your credentials and use your authenticator app for the code.',
-          [{ text: 'OK', onPress: () => router.replace('/login') }]
+          'MFA setup complete. Welcome!',
+          [{ text: 'OK', onPress: () => router.replace('/welcome') }]
         );
       } else if (mfaType === 'SMS') {
         if (!verifySMS) {
@@ -158,8 +158,8 @@ export default function SignupPage() {
         await verifySMS(mfaCode);
         Alert.alert(
           'Success',
-          'MFA setup complete. Please login with your credentials.',
-          [{ text: 'OK', onPress: () => router.replace('/login') }]
+          'MFA setup complete. Welcome!',
+          [{ text: 'OK', onPress: () => router.replace('/welcome') }]
         );
       }
     } catch (error: any) {
